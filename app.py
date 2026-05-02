@@ -42,7 +42,7 @@ with st.form("registro_abandono"):
             conn = get_connection()
             cur = conn.cursor()
             cur.execute("""
-                INSERT INTO reservas_abandonadas (cliente_nombre, cliente_email, tipo_habitacion, precio_total)
+                INSERT INTO reservas_abandonadas (cliente_nombre, cliente_email, tipo_habitacion, precio_buscado)
                 VALUES (%s, %s, %s, %s)
             """, (nombre, email, habitacion, precio))
             conn.commit()
