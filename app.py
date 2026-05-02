@@ -10,7 +10,20 @@ Original file is located at
 
 
 import streamlit as st
+from streamlit_javascript import st_javascript
 import psycopg2 # El conector para Postgres
+
+js_code = """
+const detectExit = () => {
+  document.addEventListener('mouseleave', (event) => {
+    if (event.clientY <= 0) {
+      // Enviamos una señal al servidor de que el usuario intentó salir
+      window.parent.postMessage({type: 'exit_intent', data: true}, '*');
+    }
+  });
+};
+detectExit();
+"""
 
 # Configuración de conexión (Asegúrate de que coincidan con tu pgAdmin)
 def get_connection():
