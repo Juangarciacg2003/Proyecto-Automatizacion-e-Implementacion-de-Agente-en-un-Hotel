@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/19QxeBZpFiuQrOfajem4EsOpJXvoGqu8V
 """
 
-pip install streamlit
+
 
 import streamlit as st
 import psycopg2 # El conector para Postgres
