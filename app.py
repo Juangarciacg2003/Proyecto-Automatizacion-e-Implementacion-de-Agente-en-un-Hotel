@@ -27,13 +27,8 @@ detectExit();
 
 # Configuración de conexión (Asegúrate de que coincidan con tu pgAdmin)
 def get_connection():
-    return psycopg2.connect(
-        dbname="hotel_db",
-        user="postgres",       # Usuario por defecto
-        password="Salmo91", # Cambia esto por tu contraseña de Postgres
-        host="localhost",
-        port="5432"
-    )
+    DB_URI="postgresql://postgres:[pPY8YM0SGBZN3yb0]@db.athxxpiboovoyletmyuy.supabase.co:5432/postgres"
+    return psycopg2.connect(DB_URI)
 
 st.title("🏨 Hotel Unknown AI - Dashboard")
 
